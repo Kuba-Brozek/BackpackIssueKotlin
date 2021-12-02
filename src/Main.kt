@@ -6,7 +6,7 @@ import java.util.*
     private val ChromosomeList2: MutableList<Chromosome> = mutableListOf()
     private val VWList: MutableList<VW> = mutableListOf()
     private val PercentageRangeList: MutableList<PercentageRangeClass> = mutableListOf()
-    fun main(args: Array<String>) {
+    fun main() {
         val scanner = Scanner(System.`in`)
         println("Podaj liczbe chromosomów: ")
         val ChromosomesNumber = scanner.nextInt()
@@ -78,7 +78,7 @@ import java.util.*
                 var WeightOfFitFun = 0
                 var CalculatedWeight = 0
                 for (i in 0..9) {
-                    val Check: String = ChromosomeList[j].chromosomeBinar!!.substring(i, i-1)
+                    val Check: String = ChromosomeList[j].chromosomeBinar!!.substring(i, i+1)
                     CalculatedWeight = Check.toInt() * VWList[i].weight
                     WeightOfFitFun += CalculatedWeight
                 }
@@ -198,9 +198,9 @@ import java.util.*
         for (i in 0 until ChromosomesNumber) {
             val j = i + 1
             print(" | CH" + j + " = " + ChromosomeList[i].chromosomeBinar + " | ")
-            System.out.print(" | Fenotyp: " + ChromosomeList[i].ch.toString() + " | ")
-            System.out.print(" | Wartość plecaka: " + ChromosomeList[i].valueOfChromosome.toString() + " | ")
-            System.out.println(" | Waga plecaka: " + ChromosomeList[i].weightOfChromosome.toString() + " | ")
+            System.out.print(" | Fenotyp: " + ChromosomeList[i].ch + " | ")
+            System.out.print(" | Wartość plecaka: " + ChromosomeList[i].valueOfChromosome + " | ")
+            System.out.println(" | Waga plecaka: " + ChromosomeList[i].weightOfChromosome + " | ")
         }
     }
 
