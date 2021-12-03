@@ -1,8 +1,6 @@
 package com.company
-
 import java.util.*
 import kotlin.collections.ArrayList
-
 
 private val ChromosomeList = ArrayList<Chromosome>()
     private val ChromosomeList2 = ArrayList<Chromosome>()
@@ -21,7 +19,6 @@ private val ChromosomeList = ArrayList<Chromosome>()
         val numOfMaxFitFunOccur = scanner.nextInt()
         var numOfFitListIterations = 0
         var numOfIterations = 0
-
         /*for(int i = 0; i< 10; i++){
         System.out.println("Podaj Wagę i Wartość dla " + i + " bitu: ");
             int Weight = scanner.nextInt();
@@ -51,7 +48,6 @@ private val ChromosomeList = ArrayList<Chromosome>()
             while (binarValue.length < 10) {
                 binarValue = "0$binarValue"
             }
-
             ChromosomeList[i].chromosomeBinar = binarValue
             ChromosomeList2[i].chromosomeBinar = binarValue
         }
@@ -79,18 +75,16 @@ private val ChromosomeList = ArrayList<Chromosome>()
                         val Beg: String = ChromosomeList[j].chromosomeBinar!!.substring(0, Bit - 1)
                         val End: String = ChromosomeList[j].chromosomeBinar!!.substring(Bit)
                         val Mutate: String = ChromosomeList[j].chromosomeBinar!!.substring(Bit-1, Bit)
-
-                        if (Mutate.equals("1")) {
-
-                            val ChromosomeBinarFinal = Beg + "0" + End
-                            ChromosomeList[j].chromosomeBinar = ChromosomeBinarFinal
-                            ChromosomeList2[j].chromosomeBinar = ChromosomeBinarFinal
-                            val decimal: Int = ChromosomeList[j].chromosomeBinar!!.toInt(2)
-                            ChromosomeList[j].ch = decimal
-                            ChromosomeList2[j].ch = decimal
-                            ChromosomeList[j].weightOfChromosome = ChromosomeList[j].weightOfChromosome - VWList[Bit-1].weight
-                            ChromosomeList2[j].weightOfChromosome = ChromosomeList[j].weightOfChromosome - VWList[Bit-1].weight
-                        }
+                            if (Mutate.equals("1")) {
+                                val ChromosomeBinarFinal = Beg + "0" + End
+                                ChromosomeList[j].chromosomeBinar = ChromosomeBinarFinal
+                                ChromosomeList2[j].chromosomeBinar = ChromosomeBinarFinal
+                                val decimal: Int = ChromosomeList[j].chromosomeBinar!!.toInt(2)
+                                ChromosomeList[j].ch = decimal
+                                ChromosomeList2[j].ch = decimal
+                                ChromosomeList[j].weightOfChromosome = ChromosomeList[j].weightOfChromosome - VWList[Bit-1].weight
+                                ChromosomeList2[j].weightOfChromosome = ChromosomeList[j].weightOfChromosome - VWList[Bit-1].weight
+                            }
                         if (MaxWeight > ChromosomeList[j].weightOfChromosome) {
                             break
                         }
@@ -164,7 +158,6 @@ private val ChromosomeList = ArrayList<Chromosome>()
                 val x = RandomPercentageNumber()
                 val Lokus = RandomNumberLokusPm()
                 if (x < Pm) {
-
                     val Beg: String = ChromosomeList[i].chromosomeBinar!!.substring(0, Lokus - 1)
                     val End: String = ChromosomeList[i].chromosomeBinar!!.substring(Lokus)
                     val Mutate: String = ChromosomeList[i].chromosomeBinar!!.substring(Lokus-1, Lokus)
@@ -185,7 +178,6 @@ private val ChromosomeList = ArrayList<Chromosome>()
             numOfIterations++
         }
         println("\n | Liczba iteracji: $numOfIterations | ")
-        //System.out.println("Największy fenotyp: "+FinalValue);
         println(" | Największa funkcja przystosowania: " + final / 6 + " | ")
         for (i in 0 until ChromosomesNumber) {
             val j = i + 1
@@ -195,31 +187,25 @@ private val ChromosomeList = ArrayList<Chromosome>()
             System.out.println(" | Waga plecaka: " + ChromosomeList[i].weightOfChromosome + " | ")
         }
     }
-
     fun RandomNumberChromosome(): Int {
         val r = Random()
         return r.nextInt(1023 - 1 + 1)
     }
-
     fun RandomPercentageNumber(): Double {
         return Math.random() * 1
     }
-
     fun RandomNumberLokusPm(): Int {
         val r = Random()
         return r.nextInt(10 - 1 + 1) + 1
     }
-
     fun RandomNumberLokusPk(): Int {
         val r = Random()
         return r.nextInt(9 - 1 + 1) + 1
     }
-
     fun Random16(): Int {
         val r = Random()
         return r.nextInt(6 - 1 + 1) + 1
     }
-
     fun PercentageValue(a: Int, b: Int): Double {
         val c = a.toDouble()
         val d = b.toDouble()
