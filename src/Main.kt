@@ -19,12 +19,13 @@ private val ChromosomeList = ArrayList<Chromosome>()
         val numOfMaxFitFunOccur = scanner.nextInt()
         var numOfFitListIterations = 0
         var numOfIterations = 0
-        /*for(int i = 0; i< 10; i++){
-        System.out.println("Podaj Wagę i Wartość dla " + i + " bitu: ");
-            int Weight = scanner.nextInt();
-            int Value = scanner.nextInt();
-            VWList.add(new VW(Weight, Value));
-        }*/
+        for(i in 0..9){
+            System.out.println("Podaj Wagę i Wartość dla " + i + " bitu: ")
+                val Weight = scanner.nextInt()
+                val Value = scanner.nextInt()
+                VWList.add( VW(Weight, Value))
+        }
+        /*
         VWList.add(VW(4, 12))
         VWList.add(VW(9, 6))
         VWList.add(VW(12, 10))
@@ -35,6 +36,8 @@ private val ChromosomeList = ArrayList<Chromosome>()
         VWList.add(VW(12, 4))
         VWList.add(VW(6, 8))
         VWList.add(VW(8, 6))
+        */
+
         println(" | Początkowa pula chromosomów | ")
         for (i in 0 until chromosomesNumber) {
             val randNumHelper = randomNumberChromosome()
